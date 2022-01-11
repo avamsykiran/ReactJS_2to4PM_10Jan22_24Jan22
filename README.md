@@ -46,6 +46,7 @@ Lab Setup
     NodeJS      DevPlatform     https://nodejs.org/en/
 
                                 node --version
+                                npm --version
 
     create-react-app    dev tool
 
@@ -66,7 +67,7 @@ NodeJS
 
     These tools are going to run in NodeJS of developer machine.
 
-ReactJS
+ReactJS Introduction
 --------------------------------------------------------
     
     is a javascript based SPA framework
@@ -114,3 +115,107 @@ ReactJS
 
                             ----------DATA (xml/JSON) RESP ---> recevied by the javascript and can 
                                                                     display on the index.html
+Creating a react app
+----------------------------------------------------------------------\
+
+    npx create-react-app proj-name
+
+    (or)
+
+    npm install -g create-react-app@latest
+
+    create-eact-app proj-name
+
+Compile, Bundle and run the react app on developemnt server
+---------------------------------------------------------------------
+    cd proj-name
+    npm start
+
+JSX - Javascript extended
+----------------------------------------------------------------------
+
+    Javascript
+        let userName = "Vamsy Kiran";
+        let myPara = docuemnt.createElement("p");
+        myPara.textContent = "Hai Hello "+ userName +", how are you?";
+
+        let friends =["Vamsy","Vinay","Ram","Raju"];
+        let frdOL = document.createElement("ol");
+        friends.forEach(
+            fnm => {
+                let item = document.createElement("li");
+                item.textContent=fnm;
+                frdOL.appendChild(item);
+            }
+        );
+
+    JSX
+        let userName = "Vamsy Kiran";
+        let myPara = <p>Hai Hello {userName}, how are you?</p> ;
+
+        let friends =["Vamsy","Vinay","Ram","Raju"];
+        let frdOL = <ol>
+                        {friends.map(fnm => <li>{fnm}</li>)}
+                    </ol>;
+
+        the html elements are all expected to be lower cased.
+        the react compoenets can be refered in JSX as Html Tags with the class name being tag name.
+        the 'class' attribute is not allowd instead 'className' attribute is tobe used.
+
+
+ReactJS - Componenets
+--------------------------------------------------------
+
+    A component is a resuable self-reliant section.
+    Single Page of the SPA (index.html) is composed of one or more of thsoe components.
+    And these components are interchangable when needed.
+
+    index.html
+        |- head
+        |- body
+            |- div
+                 |- AppComponent
+                        |- HeaderComponent
+                        |- NavComponent
+                        |- MainComponent
+                                |
+                                -----------------------------------------------------------------------
+                                |                 |                         |                       |
+                                LoginComponent  RegistrationComponent       DashboardComponent      .......
+                        |- FooterComponent
+
+
+    Component   =   state + props + render()
+
+                    state is all the data the component needs to hold.
+                            1. the state has to be initialized only in the constructor.
+                            2. the state can not be modified directly, instead 'setState' method
+                                is used to revamp (recreated and repalced) the state.
+                            3. the state is alwasy monitored by the react chagne system. as an when
+                                a change in the state is detected, the render() method is invoked.
+
+                    render()    is a method that shall return one and only one HTML element, and that
+                                    html element is displayed on the screen when ever the current component
+                                    has to be displayed.
+
+
+    1. Class based Components
+    2. Function based Components
+    3. High Order Components
+
+
+    Class based Components
+    --------------------------------------------------------------------------------
+            clsss Header extends React.Component {
+                constructor(){
+                    this.state = {
+                        //all the data needed by this component
+                    };
+                }
+
+                render(){
+                    //JSX code and fabricate one single HTML element
+
+                    return htmlElement; 
+                }
+            }
