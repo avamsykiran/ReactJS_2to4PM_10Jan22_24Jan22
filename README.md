@@ -203,7 +203,6 @@ ReactJS - Componenets
     2. Function based Components
     3. High Order Components
 
-
     Class based Components
     --------------------------------------------------------------------------------
             clsss Header extends React.Component {
@@ -219,3 +218,46 @@ ReactJS - Componenets
                     return htmlElement; 
                 }
             }
+
+            Event Handling
+            ------------------------------------------------------------------
+
+                assign the memebr method to the html event attribute.
+
+            Form Handling
+            ------------------------------------------------------------------
+
+                <input type="number" value={this.state.n1} onChange={//setState} />        
+
+
+    Function based Components
+    --------------------------------------------------------------------------------
+
+        are also called state less components.
+
+        const Footer = (props) => {
+            
+            //any JSX or javascript code....
+
+            return aSinglelHtmlElement;
+        };
+
+    props 
+    ---------------------------------------------------------------------------
+
+        props are attributes shared with the child component 
+        from a parent component.
+
+    High Order Components
+    --------------------------------------------------------------------
+
+        is a function that accepts a component as a parameter
+        and modifies that component
+        and returns the modfiied component.
+
+        are used to isolate reusable/repeated operations.
+
+
+
+
+
