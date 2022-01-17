@@ -222,7 +222,7 @@ ReactJS - Componenets
             Event Handling
             ------------------------------------------------------------------
 
-                assign the memebr method to the html event attribute.
+                assign the member method to the html event attribute.
 
             Form Handling
             ------------------------------------------------------------------
@@ -256,6 +256,23 @@ ReactJS - Componenets
         and returns the modfiied component.
 
         are used to isolate reusable/repeated operations.
+
+    V-DOM / Virtual DOM / Shadow DOM
+    --------------------------------------------------------------------
+
+        the react view engine creates a copy of the actual DOM 
+        and calls it the V-DOM.
+
+        Any changes made to v-dom will not be displayed immediatly on the screen,
+        where as any chagne made to the actula dom gets rendered on the screen immediatly.
+
+        Each time a change of state is detected, the render method regenrate the whole
+        v-dom and thats fast and easy as it has no direct visual effect. Once v-dom is
+        generated, it is comapred with the actual dom and the nodes that need to be
+        created/removed/modifed are identified and only those nodes are created or removed
+        or changed, thus avoiding complete change on actual dom.
+
+        
 
 
 
