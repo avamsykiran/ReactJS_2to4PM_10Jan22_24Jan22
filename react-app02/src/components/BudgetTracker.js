@@ -1,6 +1,7 @@
 import { Component } from "react";
-import NewTxnRow from "./NewTxnRow";
+import TxnFormRow from "./TxnFormRow";
 import TxnRow from "./TxnRow";
+import TxnSummary from "./TxnSummary";
 
 class BudgetTracker extends Component {
     constructor(props) {
@@ -22,6 +23,10 @@ class BudgetTracker extends Component {
         }
     }
 
+    addTxn = txn => {
+        this.setState({ txns: [...this.state.txns, txn] });
+    }
+
     render() {
         return (
             <section className="container-fluid p-4">
@@ -35,14 +40,18 @@ class BudgetTracker extends Component {
                     </thead>
                     <tbody>
 
-                        <NewTxnRow />
+                        <TxnFormRow isNew={true} addTxn={this.addTxn} />
 
                         {
                             this.state.txns.map(
-                                txn => <TxnRow key={txn.id} txn={txn} delTxn={this.delTxn} />
+                                txn => (txn.isEditing ?
+                                    <TxnFormRow key={txn.id} isNew={false} txn={txn} editTxn={this.editTxn} /> :
+                                    <TxnRow key={txn.id} txn={txn} delTxn={this.delTxn} />
+                                )
                             )
                         }
                     </tbody>
+                    <TxnSummary txns={this.state.txns} />
                 </table>
             </section>
         );
