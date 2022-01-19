@@ -272,6 +272,52 @@ ReactJS - Componenets
         created/removed/modifed are identified and only those nodes are created or removed
         or changed, thus avoiding complete change on actual dom.
 
+    Class - Component LifeCycle Methods
+    ----------------------------------------------------------------------
+
+        constructor()               used to receive the props and initilize the state
+            ↓
+        render()                    return the html dom that has to be displayed for the compo...
+            ↓
+        componentDidMount()         used to do any initial activity like calling rest api ..etc
+                                    after the first rendering happens...
+            ↓
+            ↓ any time if the 'setState()' gets called
+                                ↓
+                            render()
+                                ↓
+                            componentDidUpdate()    used to do any action after rendering....
+                                                    beware of calling 'setState()' over here...
+
+        when the component has to be unmounted....
+            componentWillUnmount()
+                 ↓
+            componentDidUnmount()
+
+    React Hooks
+    -----------------------------------------------------------------------
+
+        React Hooks are some function that offer special
+        capabilities to functional components.
+
+            useState            initilizing and manage=ing state
+            useEffect           equivalent to componentDidMount and
+                                componentDidUpdate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
 
 

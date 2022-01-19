@@ -5,9 +5,10 @@ const TxnRow = props => (
         <td className="text-end">{props.txn.type==="CREDIT"?props.txn.amount:undefined}</td>
         <td className="text-end">{props.txn.type==="DEBIT"?props.txn.amount:undefined}</td>
         <td>
-         <button type="button" className="btn btn-sm btn-secondary">EDIT</button>
+         <button type="button" className="btn btn-sm btn-secondary"
+            onClick={e => props.markEditable(props.txn.id)}> EDIT </button>
          <button type="button" className="btn btn-sm btn-danger"
-            onClick={e => props.delTxn(props.txn.id) }>DELETE</button>
+            onClick={e => props.delTxn(props.txn.id) }> DELETE </button>
         </td>
     </tr>
 );

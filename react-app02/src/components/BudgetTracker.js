@@ -27,6 +27,18 @@ class BudgetTracker extends Component {
         this.setState({ txns: [...this.state.txns, txn] });
     }
 
+    editTxn= txn => {
+        this.setState({txns:this.state.txns.map(t => t.id===txn.id?{...txn,isEditing:undefined}:t)});
+    }
+
+    markEditable = id => {
+        this.setState({txns:this.state.txns.map(t => t.id===id?{...t,isEditing:true}:t)});
+    }
+
+    unMarkEditable = id => {
+        this.setState({txns:this.state.txns.map(t => t.id===id?{...t,isEditing:undefined}:t)});
+    }
+
     render() {
         return (
             <section className="container-fluid p-4">
@@ -39,14 +51,13 @@ class BudgetTracker extends Component {
                         <th>Action</th>
                     </thead>
                     <tbody>
-
                         <TxnFormRow isNew={true} addTxn={this.addTxn} />
-
                         {
                             this.state.txns.map(
                                 txn => (txn.isEditing ?
-                                    <TxnFormRow key={txn.id} isNew={false} txn={txn} editTxn={this.editTxn} /> :
-                                    <TxnRow key={txn.id} txn={txn} delTxn={this.delTxn} />
+                                    <TxnFormRow key={txn.id} isNew={false} txn={txn} 
+                                        editTxn={this.editTxn} unMarkEditable={this.unMarkEditable} /> :
+                                    <TxnRow key={txn.id} txn={txn} delTxn={this.delTxn} markEditable={this.markEditable} />
                                 )
                             )
                         }
