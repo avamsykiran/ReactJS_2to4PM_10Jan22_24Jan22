@@ -300,9 +300,24 @@ ReactJS - Componenets
         React Hooks are some function that offer special
         capabilities to functional components.
 
-            useState            initilizing and manage=ing state
+            useState            initilizing and managing state
+
+                  let [valueHolder,valueSetter]  = useState(initalValue)
+
             useEffect           equivalent to componentDidMount and
                                 componentDidUpdate
+
+                useEffect(callBack,dependencyArray)  
+
+                            if the dependencyArray=[], the callBack is invoekd
+                            only once for the first time in the components life.
+
+                            if the dependencyArray=undefined, the callBack is invoked
+                            everytime any setter is called.
+
+                            if the dependencyArray=[count], the callBack is invoked
+                            everytime setCount is called.
+
 
 
 
