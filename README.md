@@ -519,7 +519,7 @@ ReactJS
     thunk   means a function that returns another function.
 
     action      can be an object
-                can be a function (thunk)
+                can be a function (returned by a thunk)
 
                 if the action is an object, it is directed to the reducer
                 if the action is a function, that function is executed and it is

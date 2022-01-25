@@ -7,11 +7,13 @@ const BudgetTracker = ({ txns }) => (
     <section className="container-fluid p-4">
         <table className="table table-bordered table-stripped ">
             <thead>
-                <th>Txn#</th>
-                <th>Header</th>
-                <th>Credit</th>
-                <th>Debit</th>
-                <th>Action</th>
+                <tr>
+                    <th>Txn#</th>
+                    <th>Header</th>
+                    <th>Credit</th>
+                    <th>Debit</th>
+                    <th>Action</th>
+                </tr>
             </thead>
             <tbody>
                 <TxnFormRow isNew={true} />
@@ -29,8 +31,8 @@ const BudgetTracker = ({ txns }) => (
     </section>
 );
 
-const mapStateToProps = globalState => ({txns:globalState.txns});
+const mapStateToProps = globalState => ({ txns: globalState.txns });
 
 const mapDispatchToProps = undefined;
 
-export default connect(mapStateToProps,mapDispatchToProps)(BudgetTracker);
+export default connect(mapStateToProps, mapDispatchToProps)(BudgetTracker);

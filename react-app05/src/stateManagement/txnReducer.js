@@ -29,11 +29,11 @@ const txnReducer = (state = initialState(), action) => {
     let txns;
 
     switch (action.type) {
-        case ADD_TXN: txns = [...state.txns, action.txn]; break;
+        case ADD_TXN:  txns = [...state.txns, action.txn]; break;
         case UPD_TXN: txns = state.txns.map(t => t.id == action.txn.id ? { ...action.txn,isEditing:undefined } : t); break;
         case DEL_TXN: txns = state.txns.filter(t => t.id != action.id); break;
-        case MARK_EDIT_TXN: state.txns.map(t => t.id == action.id ? { ...t,isEditing:true } : t); break;
-        case UNMARK_EDIT_TXN: state.txns.map(t => t.id == action.id ? { ...t,isEditing:undefined } : t); break;
+        case MARK_EDIT_TXN: txns= state.txns.map(t => t.id == action.id ? { ...t,isEditing:true } : t); break;
+        case UNMARK_EDIT_TXN: txns=state.txns.map(t => t.id == action.id ? { ...t,isEditing:undefined } : t); break;
         default: txns = [...state.txns]; break;
     }
 
