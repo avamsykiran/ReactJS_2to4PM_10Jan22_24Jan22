@@ -594,10 +594,10 @@ ReactJS
                         <Component2 />  //will appear as common page layout
 
                         <Routes>
-                            <Route path="/" element="C3" />
-                            <Route path="/home" element="C4" />
-                            <Route path="/about" element="C5" />
-                            <Route path="/contact" element="C6" />
+                            <Route path="/" element={<C3 />} />
+                            <Route path="/home" element={<C4 />} />
+                            <Route path="/about" element={<C5 />} />
+                            <Route path="/contact" element={<C6 />} />
                         </Routes>
                     </BrowserRouter>
                     

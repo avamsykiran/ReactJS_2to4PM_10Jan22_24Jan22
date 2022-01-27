@@ -1,9 +1,34 @@
 {
-    "txns": [
-        { "id": 1, "header": "Salary", "amount": 67000, "type": "CREDIT" },
-        { "id": 2, "header": "House Rent", "amount": 7000, "type": "DEBIT" },
-        { "id": 3, "header": "SB Interest", "amount": 4000, "type": "CREDIT" },
-        { "id": 4, "header": "Car Fuel", "amount": 4000, "type": "DEBIT" },
-        { "id": 5, "header": "Mobile and Internet", "amount": 3000, "type": "DEBIT" }
-    ]
+  "txns": [
+    {
+      "id": 1,
+      "header": "Salary",
+      "amount": 67000,
+      "type": "CREDIT"
+    },
+    {
+      "id": 2,
+      "header": "House Rent",
+      "amount": 7000,
+      "type": "DEBIT"
+    },
+    {
+      "id": 3,
+      "header": "SB Interest",
+      "amount": 4000,
+      "type": "CREDIT"
+    },
+    {
+      "id": 4,
+      "header": "Car Fuel",
+      "amount": 4000,
+      "type": "DEBIT"
+    },
+    {
+      "id": 5,
+      "header": "Mobile and Internet",
+      "amount": 3000,
+      "type": "DEBIT"
+    }
+  ]
 }
